@@ -1,4 +1,4 @@
-\### BetheKorr
+### BetheKorr
 
 Fig. 6.6 Measured and calculated mass collision stopping powers of aluminium against proton
 
@@ -13,8 +13,7 @@ collision stopping power equation (6.42) accounting for quantum mechanical as we
 effects
 
 
-
-\### BraggPeak
+### BraggPeak
 
 Fig. 1.2 Percentage depth dose against depth in water for radiation beams of various types and
 
@@ -27,8 +26,7 @@ radiation: in (c) for electron beams in the range from 9 MeV to 32MeV and in (d)
 particle beams (190 MeV protons, 190 MeV deuterons, and 310 MeV carbon ions)
 
 
-
-\### CollisionTypes
+### CollisionTypes
 
 Fig. 6.1 Three different types of collision of a charged particle with an atom, depending on the
 
@@ -37,8 +35,7 @@ relative size of the impact parameter b and atomic radius a. Hard (close) collis
 (distant) collision for b >> a; and radiation collision for b << a
 
 
-
-\### BetheCurve
+### BetheCurve
 
 Fig. 6.7 Schematic representation of the shape of the collision stopping power Scol as a function
 
@@ -55,7 +52,6 @@ is the velocity of the charged particle to reach a broad minimum at ∼2.5M0c2 w
 rest energy of the charged particle. In region (3), Scol rises slowly with increasing EK because of
 
 relativistic effects
-
 
 
 \### e-beamDepth
