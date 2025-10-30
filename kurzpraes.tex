@@ -1,0 +1,132 @@
+\documentclass[aspectratio=169]{beamer} % 16:9 aspect ratio for modern screen
+% \documentclass[handout]{beamer}
+% \documentclass[notes=only]{beamer}
+
+% Theme settings
+\usetheme[progressbar=foot]{metropolis} % Minimalist theme
+\metroset{progressbar=frametitle} % Progress bar soll nur folien mit titel berücksichtigtigen?
+\setbeamercolor{background canvas}{bg=white} % White background color
+
+\makeatletter
+    \setlength{\metropolis@progressinheadfoot@linewidth}{1.5pt}
+\makeatother
+
+
+\usefonttheme{professionalfonts} % Font theme
+
+% Packages
+\usepackage[T1]{fontenc}   % Font encoding
+\usepackage[ngerman]{babel} % German language
+\usepackage[sfdefault]{FiraSans} % For FiraSans font
+\usepackage[backend=biber, style=authoryear-comp
+, sorting=nyt]{biblatex} % For bibliography
+\usepackage{csquotes} % Recommended for biblatex with babel/polyglossia
+\usepackage{textgreek} % Greek letters in text mode (aus references von Citavi)
+\usepackage{tikz}          % For drawing graphics
+\usepackage{animate} % Für Animation
+
+\usepackage{graphicx}       % For including images
+\usepackage{amsmath, amssymb} % For math symbol
+
+% \usepackage{media9} % For embedding videos
+
+\usepackage[labelformat=empty]{caption}
+
+
+% Bibliography settings
+\addbibresource{references.bib} % Path to the bibliography file
+
+% Graphics path
+\graphicspath{{Images/}} % Path to images folder
+
+% custom Citation commands
+\DeclareCiteCommand{\citeauthortitle}
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \printnames{labelname}%
+   \setunit{\space\textendash\space}
+   \printfield{title}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+  \DeclareCiteCommand{\citeauthortitleurl}
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \printnames{labelname}%
+   \setunit{\space\textendash\space}
+   \printfield{title}%
+   \setunit{\addsemicolon\space}
+   \printfield{url}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\parenciteauthortitle}
+  {\usebibmacro{prenote}}
+  {\bibopenparen\usebibmacro{citeindex}%
+   \printnames{labelname}%
+   \setunit{\space\textendash\space}% <- Hier wird das Trennzeichen ":" hinzugefügt
+   \printfield{title}\bibcloseparen}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\makeatletter
+\renewcommand\footnotesize{\tiny}
+\makeatother
+
+\newcommand{\figcite}[1]{\\[-3mm]{\tiny Quelle: \cite{#1}}}
+\newcommand{\figciteweb}[1]{\\[-3mm]{\tiny aus: \citeauthortitle{#1}}}
+\newcommand{\figciteweburl}[1]{\\[-3mm]{\tiny aus: \citeauthortitleurl{#1}}}
+  
+\mode<handout>{
+    \AtBeginSection[]{} % In Handout-Version keine Section-Folie erzeugen
+}
+
+% Title page settings
+\title{Interactions of Charged Particles with Matter}
+\subtitle{Themavergabe und Betreuer: \textbf{Dr. Roman Bergert}}
+\author{Florian Marius Adamczyk}
+\date{\today}
+\institute{Justus-Liebig-Universität Gießen \\ Modul \textbf{Wissenschaftliches Präsentieren} bei \textbf{Prof. Dr. Derck Schlettwein, PD Dr. Daniel Ebeling, Dr. Ulrike Nespital}\\ }
+\titlegraphic{\vspace{-1cm}\includegraphics[height=1.2cm]{Images/jlu_logo.jpg}}
+
+\begin{document}
+
+    % Black slide
+    \begin{frame}<handout:0>[plain, noframenumbering]
+        \begin{tikzpicture}[remember picture, overlay]
+          \fill[black] (current page.south west) rectangle (current page.north east);
+        \end{tikzpicture}
+        \pause
+        \centering
+       {\includegraphics[width=0.9\textwidth]{Images/Copilot_20250706_224005.png}}
+        \tiny \textcolor{gray}{von: \citetitle{Copilot.2025} -- \citefield{Copilot.2025}{note}}
+        \note{note}
+    \end{frame}
+   
+
+    % Title Slide
+    \begin{frame}[noframenumbering, plain]
+        \vspace*{-0.6cm}
+        \titlepage
+        \vspace*{-1.6cm}
+    \end{frame}
+    
+    % Table of Contents
+    \begin{frame}<handout:0>{Gliederung} % Handout ausgeschaltet!!
+      \setcounter{page}{1}      
+        \tableofcontents
+    \end{frame}
+      \note{
+        Note.
+      }
+    
+    % presentation slides %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+   
+
+    % Bibliography    
+  \begin{frame}[allowframebreaks, noframenumbering, plain]{Literaturverzeichnis}
+   \printbibliography
+    \end{frame}
+
+\end{document}
