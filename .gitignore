@@ -1,0 +1,61 @@
+# LaTeX intermediate files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.dvi
+*.nav
+*.snm
+*.vrb
+*.synctex.gz
+*.xdv
+*.fdb_latexmk
+*.auxlock
+*.ilg
+*.blg
+*.bbl
+*.bcf
+*.run.xml
+
+# LaTeX build dirs and caches
+_build/
+build/
+out/
+release/
+*.pdfsync
+_minted-*/
+*.pygstyle
+
+# Generated index, glossaries, etc.
+*.glo
+*.gls
+*.glsdefs
+*.ist
+*.acn
+*.acr
+*.alg
+*.loa
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup / temp files
+*~
+*.bak
+*.tmp
+*.swp
+*.swo
