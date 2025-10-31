@@ -16,7 +16,7 @@ AN UPDATE OF THE SCIENTIFIC EVIDENCE FOR 15 PAEDIATRIC CANCERS
 
 ### 1920\_hirntumorbestrahlung
 
-https://www.heidelberg-university-hospital.com/fileadmin/*processed*/4/4/csm\_HIT\_Strahlen\_30a73943c5.jpg
+https://www.heidelberg-university-hospital.com/fileadmin/*processed*/4/4/csm_HIT_Strahlen_30a73943c5.jpg
 Slide Show: Cutting-edge technology HIT
 Image Gallery | 01.12.2019
 
