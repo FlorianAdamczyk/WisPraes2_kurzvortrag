@@ -1,37 +1,121 @@
-\documentclass[aspectratio=169]{beamer}
-\usetheme{Madrid}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[ngerman]{babel}
-\usepackage{siunitx}
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage{hyperref}
-\setbeameroption{show notes}
-\setbeamertemplate{caption}[numbered]
+\documentclass[aspectratio=169]{beamer} % 16:9 aspect ratio for modern screen
+% \documentclass[handout]{beamer}
+% \documentclass[notes=only]{beamer}
 
-\title{Wechselwirkungen geladener Teilchen mit Materie}
-\subtitle{Kurzvortrag}
-\author{Florian Adamczyk}
-\institute{M.Sc.\ Angewandte Physik}
+% Theme settings
+\usetheme[progressbar=foot]{metropolis} % Minimalist theme
+\metroset{progressbar=frametitle} % Progress bar soll nur folien mit titel berücksichtigtigen?
+\setbeamercolor{background canvas}{bg=white} % White background color
+
+\makeatletter
+    \setlength{\metropolis@progressinheadfoot@linewidth}{1.5pt}
+\makeatother
+
+
+\usefonttheme{professionalfonts} % Font theme
+
+% Packages
+\usepackage[T1]{fontenc}   % Font encoding
+\usepackage[ngerman]{babel} % German language
+\usepackage[sfdefault]{FiraSans} % For FiraSans font
+\usepackage[backend=biber, style=authoryear-comp
+, sorting=nyt]{biblatex} % For bibliography
+\usepackage{csquotes} % Recommended for biblatex with babel/polyglossia
+\usepackage{textgreek} % Greek letters in text mode (aus references von Citavi)
+\usepackage{tikz}          % For drawing graphics
+\usepackage{animate} % Für Animation
+
+\usepackage{graphicx}       % For including images
+\usepackage{amsmath, amssymb} % For math symbol
+
+% \usepackage{media9} % For embedding videos
+
+\usepackage[labelformat=empty]{caption}
+
+
+% Bibliography settings
+\addbibresource{references.bib} % Path to the bibliography file
+
+% Graphics path
+\graphicspath{{Images/}} % Path to images folder
+
+% custom Citation commands
+\DeclareCiteCommand{\citeauthortitle}
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \printnames{labelname}%
+   \setunit{\space\textendash\space}
+   \printfield{title}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+  \DeclareCiteCommand{\citeauthortitleurl}
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \printnames{labelname}%
+   \setunit{\space\textendash\space}
+   \printfield{title}%
+   \setunit{\addsemicolon\space}
+   \printfield{url}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\parenciteauthortitle}
+  {\usebibmacro{prenote}}
+  {\bibopenparen\usebibmacro{citeindex}%
+   \printnames{labelname}%
+   \setunit{\space\textendash\space}% <- Hier wird das Trennzeichen ":" hinzugefügt
+   \printfield{title}\bibcloseparen}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\makeatletter
+\renewcommand\footnotesize{\tiny}
+\makeatother
+
+\newcommand{\figcite}[1]{\\[-3mm]{\tiny Quelle: \cite{#1}}}
+\newcommand{\figciteweb}[1]{\\[-3mm]{\tiny aus: \citeauthortitle{#1}}}
+\newcommand{\figciteweburl}[1]{\\[-3mm]{\tiny aus: \citeauthortitleurl{#1}}}
+  
+\mode<handout>{
+    \AtBeginSection[]{} % In Handout-Version keine Section-Folie erzeugen
+}
+
+% Title page settings
+\title{Interactions of Charged Particles with Matter}
+\subtitle{Wechselwirkungen geladener Teilchen mit Materie}
+\author{Florian Marius Adamczyk}
 \date{\today}
-\titlegraphic{\includegraphics[width=0.7\textwidth]{Images/Titlepage.png}}
+\institute{Justus-Liebig-Universität Gießen \\ Modul \textbf{Wissenschaftliches Präsentieren} bei \\ \textbf{Prof. Dr. Derck Schlettwein, PD Dr. Daniel Ebeling, Dr. Ulrike Nespital}\\
+Themavergabe und Betreuer: \textbf{Dr. Roman Bergert}}
+\titlegraphic{\vspace{-0.85cm}\includegraphics[height=1.2cm]{Images/jlu_logo.jpg}}
 
 \begin{document}
 
+    % Black slide
+    \begin{frame}<handout:0>[plain, noframenumbering]
+        \begin{tikzpicture}[remember picture, overlay]
+        \fill[black] (current page.south west) rectangle (current page.north east);
+        \end{tikzpicture}
+        \pause
+        \centering
+       \includegraphics[width=1.0\textwidth]{Images/Titlepage.png}
+    \end{frame}
+   
+
+
 \begin{frame}
   \titlepage
-  \note{\scriptsize Sehr geehrte Damen und Herren, gesch\"atzte Kollegen,\\[0.5ex]
-  als Masterstudent der Angewandten Physik freue ich mich, Ihnen heute in den n\"achsten 10 Minuten einen pr\"agnanten \"Uberblick \"uber die Wechselwirkungen geladener Teilchen mit Materie zu geben, ein fundamentales Feld, dessen theoretische Grundlagen die Basis f\"ur moderne Anwendungen von der Dosimetrie bis zur Hadronentherapie bilden.}
+\note{\scriptsize Die pr\"azise Steuerung und Dosierung geladener Teilchen ist ein Eckpfeiler der modernen Medizinphysik. Im Kontext der Hadronentherapie--insbesondere der Protonen- oder Schwerionentherapie--entscheidet die genaue Vorhersage des Energieverlusts dar\"uber, ob der Bragg-Peak millimetergenau im Tumorgewebe platziert wird, w\"ahrend umliegendes gesundes Gewebe geschont bleibt (S.~236, Kapitel~6.4).\\[0.5ex]
+Dieser kritische Bereich der Dosimetrie baut direkt auf den theoretischen Modellen auf, die erkl\"aren, wie geladene Teilchen ihre kinetische Energie schrittweise in einem absorbierenden Medium abgeben (S.~232, Abschnitt~6.2). Das Verst\"andnis des Bremsverm\"ogens ist daher nicht nur ein historisches Thema, das mit Bohr (1913) begann und mit Bethe und Fano (1930er/1960er) kulminierte, sondern es ist eine aktive Notwendigkeit f\"ur die klinische Pr\"azision (S.~230, Abschnitt~6.1).}
 \end{frame}
 
 \begin{frame}{Gliederung}
   \begin{itemize}
-    \item Einleitung: aktuelle Relevanz und Aufh\"anger
     \item Bremsverm\"ogen: Mechanismen und Definitionen
     \item Bethe-Formel und Dynamik des Kollisionsverlusts
     \item Gestalt der Bethe-Mass-Collision-Stopping-Power-Kurve
-    \item Makroskopische Konsequenzen: Bragg-Peak und Therapie
+    \item \textcolor{gray}{(Makroskopische Konsequenzen: Bragg-Peak und Therapie)}
     \item Zusammenfassung und Ausblick
   \end{itemize}
   \note{\scriptsize 1. Einleitung: aktuelle Relevanz und Aufh\"anger (Attention Catcher).\\[0.25ex]
@@ -40,18 +124,6 @@
   4. Die Form der Bethe Mass Collision Stopping Power Curve.\\[0.25ex]
   5. Makroskopische Konsequenzen: Der Bragg-Peak.\\[0.25ex]
   6. Zusammenfassung.}
-\end{frame}
-
-\section{Einleitung}
-
-\begin{frame}{Einleitung: Relevanz}
-  \begin{itemize}
-    \item Pr\"azise Steuerung geladener Teilchen ist Kern moderner Medizinphysik.
-    \item Hadronentherapie ben\"otigt millimetergenaue Platzierung des Bragg-Peaks.
-    \item Theoretische Modelle des Bremsverm\"ogens sichern klinische Pr\"azision.
-  \end{itemize}
-  \note{\scriptsize Die pr\"azise Steuerung und Dosierung geladener Teilchen ist ein Eckpfeiler der modernen Medizinphysik. Im Kontext der Hadronentherapie--insbesondere der Protonen- oder Schwerionentherapie--entscheidet die genaue Vorhersage des Energieverlusts dar\"uber, ob der Bragg-Peak millimetergenau im Tumorgewebe platziert wird, w\"ahrend umliegendes gesundes Gewebe geschont bleibt (S.~236, Kapitel~6.4).\\[0.5ex]
-  Dieser kritische Bereich der Dosimetrie baut direkt auf den theoretischen Modellen auf, die erkl\"aren, wie geladene Teilchen ihre kinetische Energie schrittweise in einem absorbierenden Medium abgeben (S.~232, Abschnitt~6.2). Das Verst\"andnis des Bremsverm\"ogens ist daher nicht nur ein historisches Thema, das mit Bohr (1913) begann und mit Bethe und Fano (1930er/1960er) kulminierte, sondern es ist eine aktive Notwendigkeit f\"ur die klinische Pr\"azision (S.~230, Abschnitt~6.1).}
 \end{frame}
 
 \section{Bremsverm\"ogen}
@@ -90,12 +162,22 @@
 \end{frame}
 
 \begin{frame}{Kollisionsverlust: Komponenten}
-  \begin{itemize}
+  \begin{columns}[T,totalwidth=\textwidth]
+    \begin{column}{0.58\textwidth}
+      \begin{itemize}
     \item Kollisionsverluste dominieren f\"ur schwere Projektile (Electronic Stopping).
     \item Zerlegung in weiche und harte Beitr\"age: $S_{\text{col}} = S_{\text{soft}}^{\text{col}} + S_{\text{hard}}^{\text{col}}$.
     \item Weiche Kollisionen ($b \gg a$) liefern h\"aufige, kleine Energie\"ubertr\"age.
     \item Harte Kollisionen ($b \approx a$) erzeugen $\delta$-Elektronen und gro\ss{}e Energieverluste.
   \end{itemize}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{Images/CollisionTypes.jpeg}
+        \caption{Kollisionsarten nach Sto\ss{}parameter}
+      \end{figure}
+    \end{column}
+  \end{columns}
   \note{\scriptsize Der Kollisionsverlust beschreibt die mittlere Energieabgabe an Orbitalelektronen und f\"uhrt zu Anregung oder Ionisation (Electronic Stopping Power). F\"ur schwere Projektile ist dies der dominante Term, da der Strahlungsanteil unterdr\"uckt ist. In der Praxis wird der Kollisionsverlust in weiche und harte Beitr\"age zerlegt: $S_{\text{col}} = S_{\text{soft}}^{\text{col}} + S_{\text{hard}}^{\text{col}}$.\\[0.5ex]
   Die mikroskopischen Wechselwirkungen werden klassisch \"uber den Sto\ss{}parameter $b$ relativ zum Atomradius $a$ charakterisiert (S.~230).\\[0.5ex]
   1. Weiche (distant) Kollisionen ($b \gg a$): Das Teilchen sp\"urt das gesamte Atom, der Energie\"ubertrag pro Ereignis ist klein, die H\"aufigkeit jedoch gro\ss{}. Diese Prozesse f\"uhren zu Polarisation, Anregung und Ionisation und tragen rund die H\"alfte zu $S_{\text{col}}$ bei.\\[0.25ex]
@@ -104,23 +186,15 @@
 
 \section{Bethe-Formel}
 
-\begin{frame}{Historischer Kontext}
-  \begin{itemize}
-    \item F\"ur schwere geladene Teilchen dominiert $S_{\text{col}}$ den Energieverlust.
-    \item Bohrs klassische Theorie (1913) untersch\"atzte Daten um Faktor~2.
-    \item Bethe (1931) f\"uhrte quantenmechanisch-relativistische Beschreibung ein.
-  \end{itemize}
-  \note{\scriptsize F\"ur schwere geladene Teilchen ist die Kollisionsbremskraft $S_{\text{col}}$ der dominierende Term. Die historische Entwicklung f\"uhrte von Bohrs klassischer Theorie (1913), die die Bindungseffekte nur rudiment\"ar ber\"ucksichtigte und experimentelle Daten um einen Faktor~2 untersch\"atzte, zu Bethes quantenmechanisch-relativistischer Theorie (1931).}
-\end{frame}
-
 \begin{frame}{Bethe-Gleichung}
-  \begin{itemize}
-    \item Trennung in $S_{\text{soft}}$ und $S_{\text{hard}}$ eliminiert willk\"urliche Grenze $\eta$.
-    \item Resultierende Bethe-Mass-Collision-Stopping-Power-Gleichung f\"ur schwere Teilchen:
-  \end{itemize}
   \begin{equation*}
     S_{\text{col}} = C_0 \frac{z^2}{A\beta^2} Z \left\{ \ln \frac{2 m_e c^2}{I} + \ln \frac{\beta^2}{1 - \beta^2} - \beta^2 \right\}
   \end{equation*}
+  \begin{itemize}
+    \item \textbf{Teilchenparameter}: $z^2$ und $1/\beta^2$ treiben Anstieg bei langsamen Projektilen.
+        \item \textbf{Materialeigenschaften}: Elektronendichte $Z/A$ und gemittelte Ionisationsenergie $I$.
+        \item \textbf{Relativistische Terme}: $\ln \frac{\beta^2}{1-\beta^2} - \beta^2$ f\"uhren zu Hochenergieanstieg.
+  \end{itemize}
   \note{\scriptsize Bethe unterteilte $S_{\text{col}}$ in $S_{\text{soft}}$ und $S_{\text{hard}}$. Bei der Zusammenfassung der Terme (Gleichung~6.40 und~6.41) f\"allt die willk\"urlich gew\"ahlte Energieabgrenzung $\eta$ zwischen weichen und harten Kollisionen heraus.\\[0.5ex]
   Das Ergebnis f\"ur schwere geladene Teilchen (Bethe Mass Collision Stopping Power Equation) lautet ohne Korrekturen: $S_{\text{col}} = C_0 \frac{z^2}{A\beta^2} Z \{ \ln \frac{2 m_e c^2}{I} + \ln \frac{\beta^2}{1-\beta^2} - \beta^2 \}$ (S.~246).}
 \end{frame}
@@ -129,9 +203,7 @@
   \begin{columns}[T,totalwidth=\textwidth]
     \begin{column}{0.6\textwidth}
       \begin{itemize}
-        \item \textbf{Teilchenparameter}: $z^2$ und $1/\beta^2$ treiben Anstieg bei langsamen Projektilen.
-        \item \textbf{Materialeigenschaften}: Elektronendichte $Z/A$ und gemittelte Ionisationsenergie $I$.
-        \item \textbf{Relativistische Terme}: $\ln \frac{\beta^2}{1-\beta^2} - \beta^2$ f\"uhren zu Hochenergieanstieg.
+        
         \item \textbf{Korrekturen}: Schalenkorrektur $C/Z$ (niedrige Energien), Dichteeffekt $\delta$ (hohe Energien).
       \end{itemize}
     \end{column}
@@ -172,6 +244,33 @@
   Region~1: Niedrige Energie. $S_{\text{col}}$ steigt mit $E_K$ an und erreicht ein Maximum. Die klassische Bethe-Theorie bricht hier ab; Schalenkorrekturen werden notwendig. Das Maximum tritt experimentell etwa bei $E_K \approx 250 I$ auf.\\[0.25ex]
   Region~2: Intermedi\"are Energie (MIP-Region). Jenseits des Maximums f\"allt $S_{\text{col}}$ schnell ab, proportional zu $1/\beta^2$ und erreicht ein breites Minimum, nahezu materialunabh\"angig bei $E_K \approx 2.5 M_0 c^2$.\\[0.25ex]
   Region~3: Relativistische Energie. Jenseits des Minimums steigt $S_{\text{col}}$ langsam wieder an. Der Dichteeffekt $\delta$ saturiert den Anstieg in kondensierten Medien.}
+\end{frame}
+
+\begin{frame}{Kernaussagen}
+  \begin{columns}[T,totalwidth=\textwidth]
+    \begin{column}{0.55\textwidth}
+      \begin{itemize}
+        \item Energieverlust geladener Teilchen entsteht durch $S_{\text{col}}$ und $S_{\text{rad}}$.
+        \item Bethe-Kurve zeigt Maximum, MIP-Minimum und relativistischen Anstieg.
+        \item Gezielte Formung des Bragg-Peaks erm\"oglicht pr\"azise Hadronentherapie.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{Images/1920_hirntumorbestrahlung.jpg}
+        \caption{Klinische Anwendung des Bragg-Peaks}
+      \end{figure}
+    \end{column}
+  \end{columns}
+  \note{\scriptsize Die Wechselwirkungen geladener Teilchen mit Materie sind durch zwei Hauptmechanismen definiert: den Kollisionsverlust $S_{\text{col}}$ mit Orbitalelektronen und den Strahlungsverlust $S_{\text{rad}}$ mit Atomkernen. Das Bremsverm\"ogen $S$ ist die quantitative Beschreibung dieser Energieverlustrate.\\[0.5ex]
+  F\"ur schwere geladene Teilchen wird $S_{\text{col}}$ prim\"ar durch die Bethe-Formel beschrieben, welche die Abh\"angigkeit von der Teilchengeschwindigkeit \"uber den $1/\beta^2$-Term und die Materialeigenschaften \"uber die mittlere Ionisationsenergie $I$ darstellt. Die Bethe-Kurve zeigt einen $1/\beta^2$-Abfall bei mittleren Energien, gefolgt von einem Minimum (MIP-Region bei $E_K \approx 2.5 M_0 c^2$) und einem relativistischen Anstieg.\\[0.5ex]
+  Die pr\"azise Kenntnis dieser theoretischen Grundlagen erm\"oglicht es, makroskopische Ph\"anomene wie den Bragg-Peak zu modellieren. Die F\"ahigkeit, den Bragg-Peak zu formen und pr\"azise im Zielvolumen zu platzieren, definiert die moderne Hadronentherapie und bildet die Grundlage f\"ur die Dosimetrie in der Medizinphysik. Die Forschung in diesem Bereich bleibt essenziell, um die klinische Pr\"azision fortlaufend zu optimieren.}
+\end{frame}
+
+\begin{frame}<handout:0>[plain, noframenumbering]
+        \begin{tikzpicture}[remember picture, overlay]
+          \fill[black] (current page.south west) rectangle (current page.north east);
+        \end{tikzpicture}
 \end{frame}
 
 \section{Bragg-Peak}
@@ -234,14 +333,11 @@
   \note{\scriptsize Der Bragg-Peak eines monoenergetischen Strahls ist sehr schmal. Um gr\"o\ss{}ere Tumoren klinisch behandeln zu k\"onnen, muss dieser Peak verbreitert werden. Dies wird durch die Erzeugung eines Spread-Out Bragg Peak (SOBP) erreicht, indem man einen Strahl mit einer verteilten Energie verwendet, etwa durch variable Dicke von Abschw\"achern (spinning wedges). Die Modifikation des monoenergetischen Strahls resultiert in einem Plateau, das der spezifischen 3D-Form des Tumors angepasst werden kann.}
 \end{frame}
 
-\section{Zusammenfassung}
-
 \begin{frame}{Kernaussagen}
   \begin{columns}[T,totalwidth=\textwidth]
     \begin{column}{0.55\textwidth}
       \begin{itemize}
         \item Energieverlust geladener Teilchen entsteht durch $S_{\text{col}}$ und $S_{\text{rad}}$.
-        \item Bethe-Formel koppelt Teilchenparameter mit Materialeigenschaften \"uber $I$.
         \item Bethe-Kurve zeigt Maximum, MIP-Minimum und relativistischen Anstieg.
         \item Gezielte Formung des Bragg-Peaks erm\"oglicht pr\"azise Hadronentherapie.
       \end{itemize}
@@ -258,11 +354,20 @@
   Die pr\"azise Kenntnis dieser theoretischen Grundlagen erm\"oglicht es, makroskopische Ph\"anomene wie den Bragg-Peak zu modellieren. Die F\"ahigkeit, den Bragg-Peak zu formen und pr\"azise im Zielvolumen zu platzieren, definiert die moderne Hadronentherapie und bildet die Grundlage f\"ur die Dosimetrie in der Medizinphysik. Die Forschung in diesem Bereich bleibt essenziell, um die klinische Pr\"azision fortlaufend zu optimieren.}
 \end{frame}
 
-\begin{frame}{Vielen Dank}
-  \centering
-  \Large Ich danke Ihnen f\"ur Ihre Aufmerksamkeit.\\[1ex]
-  \normalsize Fragen?
-  \note{\scriptsize Ich danke Ihnen f\"ur Ihre Aufmerksamkeit und stehe nun f\"ur Fragen zur Verf\"ugung.}
+\begin{frame}{Interactions of Charged Particles with Matter}
+  \begin{figure}
+        \includegraphics[width=0.9\textwidth]{Images/1920_hirntumorbestrahlung.jpg}
+      \end{figure}
+    \pause
+  \begin{tikzpicture}[remember picture, overlay]
+          \fill[black] (current page.south west) rectangle (current page.north east);
+        \end{tikzpicture}
 \end{frame}
+
+ % Bibliography    
+  \begin{frame}[allowframebreaks, noframenumbering, plain]{Literaturverzeichnis}
+   \nocite{*}
+   \printbibliography
+  \end{frame}
 
 \end{document}
