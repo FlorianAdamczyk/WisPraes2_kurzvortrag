@@ -1,17 +1,14 @@
-Sehr geehrte Damen und Herren, geschätzte Kollegen,
-
-als Masterstudent der Angewandten Physik freue ich mich, Ihnen heute in den nächsten 10 Minuten einen prägnanten Überblick über die **Wechselwirkungen geladener Teilchen mit Materie** zu geben, ein fundamentales Feld, dessen theoretische Grundlagen die Basis für moderne Anwendungen von der Dosimetrie bis zur Hadronentherapie bilden.
+# Wechselwirkungen geladener Teilchen mit Materie
+von Florian Adamczyk
 
 ---
-[TOC]
 ### Gliederung des Vortrags
 
-1. **Einleitung: Aktuelle Relevanz und Aufhänger (Attention Catcher)**
-2. **Das Bremsvermögen (Stopping Power): Mechanismen und Definitionen**
-3. **Die Bethe-Formel und die Dynamik des Kollisionsverlusts**
-4. **Die Form der Bethe Mass Collision Stopping Power Curve**
-5. **Makroskopische Konsequenzen: Der Bragg-Peak**
-6. **Zusammenfassung**
+1. **Das Bremsvermögen (Stopping Power): Mechanismen und Definitionen**
+2. **Die Bethe-Formel und die Dynamik des Kollisionsverlusts**
+3. **Die Form der Bethe Mass Collision Stopping Power Curve**
+4. **Makroskopische Konsequenzen: Der Bragg-Peak**
+5. **Zusammenfassung**
 
 ---
 
@@ -21,7 +18,7 @@ Die präzise Steuerung und Dosierung geladener Teilchen ist ein Eckpfeiler der m
 
 Dieser kritische Bereich der Dosimetrie baut direkt auf den theoretischen Modellen auf, die erklären, wie geladene Teilchen ihre kinetische Energie schrittweise in einem absorbierenden Medium abgeben. ~S.232 6.2 Das Verständnis des **Bremsvermögens** ist daher nicht nur ein historisches Thema, das mit Bohr (1913) begann und mit Bethe und Fano (1930er/1960er) kulminierte, sondern es ist eine aktive Notwendigkeit für die klinische Präzision. ~S. 230 6.1
 
-``Bild: Titlepage ``
+![Titlepage](Images/Titlepage.png)
 
 ---
 
@@ -34,7 +31,7 @@ Ein geladenes Teilchen, das in Materie eindringt, ist von seinem Coulomb-Feld um
 
 Das **lineare Bremsvermögen** beschreibt den Energieverlust pro Einheitsweg $(−dE/dx)$ in MeV/cm. Teilt man diesen Ausdruck durch die Dichte $\rho$ des Absorbers, erhält man das **Massenbremsvermögen**
 $$ S = -\frac{1}{\rho} \frac{dE}{dx} $$
-mit der Einheit $\text{MeV} \cdot \text{cm}^2 \cdot \text{g}^{-1}$.
+mit der Einheit $\text{MeV} \cdot \text{cm}^2 \cdot \text{g}^{-1}$.\
 ~S. 232 ff
 Das **Gesamt-Massenbremsvermögen** setzt sich additiv aus Kollisions- und Strahlungsanteil zusammen:
 $$ S_{tot} = S_{col} + S_{rad} \; . $$
@@ -44,7 +41,7 @@ $$ S_{tot} = S_{col} + S_{rad} \; . $$
 
 Der Strahlungsverlust beschreibt die Energieabgabe durch Bremsstrahlung infolge der Wechselwirkung mit den Atomkernen des Absorbers. ~S. 233
 
-`` Bild: CollisionTypes ``
+![CollisionTypes](Images/CollisionTypes.jpeg)
 
 Bei **sehr kleinem Stoßparameter gegenüber dem Atomradius ($b \ll a$)** wird das Projektil vom Atomkern stark abgelenkt und emittiert Bremsstrahlung.
 Die mittlere Verlustleistung wächst mit der kinetischen Energie, skaliert nahezu quadratisch mit der Kernladungszahl des Absorbers ($\propto Z^2$) und fällt mit dem Quadrat der Teilchenmasse ($\propto 1/m^2$). Für Elektronen/Positronen kann der Strahlungsanteil daher den Kollisionsanteil übersteigen; für Protonen und schwerere Ionen bleibt er vernachlässigbar.
@@ -59,7 +56,6 @@ $$ S_{col} = S_{soft}^{col} + S_{hard}^{col} \; . $$
 
 Die mikroskopischen Wechselwirkungen werden klassisch über den Stoßparameter $b$ relativ zum Atomradius $a$ charakterisiert:
 
-`` nochmal: Bild: CollisionTypes ~S.231``
 
 1. **Weiche (distant) Kollisionen ($b \gg a$):** Das Teilchen spürt das gesamte Atom, der Energieübertrag pro Ereignis ist klein, die Häufigkeit jedoch groß. Diese Prozesse führen zu Polarisation, Anregung und Ionisation und tragen rund die Hälfte zu $S_{col}$ bei.
 2. **Harte (close) Kollisionen ($b \approx a$):** Direktes Coulomb-Wechselwirkung an einzelnen Elektronen verursacht große Energieüberträge. Die ausgelösten $\delta$-Elektronen sind selbst ionisierend und liefern den restlichen Beitrag zu $S_{col}$.
@@ -91,7 +87,7 @@ $$ S_{col} = C_0 \frac{z^2}{A\beta^2} Z \left\{ \ln \frac{2m_e c^2}{I} + \ln \fr
 3. **Relativistische Terme $\left( \ln \frac{\beta^2}{1-\beta^2} - \beta^2 \right)$:**
     * Diese Terme werden wichtig, wenn $\beta$ gegen 1 geht und führen zum langsamen Wiederanstieg der Bremskraft bei sehr hohen Energien.
 
-`` Bild: BetheKorr ~S.248``
+![BetheKorr](Images/BetheKorr.jpeg)
 
 *Hinweis zu Korrekturen:* Um die Übereinstimmung mit Messdaten zu verbessern, insbesondere bei niedrigen Energien und in kondensierten Medien, werden der Bethe-Formel Korrekturen hinzugefügt: die **Shell Correction** $(C/Z)$ bei niedriger Energie (wenn Teilchengeschwindigkeit vergleichbar mit Elektronengeschwindigkeit ist) und die **Density Effect Correction** $(\delta)$ bei hohen Energien (aufgrund der Polarisierung des Mediums).
 
@@ -102,7 +98,7 @@ $$ S_{col} = C_0 \frac{z^2}{A\beta^2} Z \left\{ \ln \frac{2m_e c^2}{I} + \ln \fr
 
 Die Auftragung des Kollisionsbremsvermögens $S_{col}$ als Funktion der kinetischen Energie $E_K$ (für schwere geladene Teilchen) zeigt drei charakteristische Regionen [60, 61, Fig. 6.7]: ~S.249
 
-`` Bild: BetheCurve ~S. 249``
+![BetheCurve](Images/BetheCurve.jpeg)
 
 #### Region 1: Niedrige Energie
 
@@ -132,7 +128,7 @@ Nachdem wir die mikroskopische und relativistische Theorie des Energieverlusts i
 
 Der Energieverlust schwerer geladener Teilchen erfolgt nahezu ausschließlich durch Kollisionen ($S_{col}$). Da der Strahlungsverlust vernachlässigbar ist, bleiben diese Teilchen auf einem im Wesentlichen geradlinigen Pfad, bis sie zur Ruhe kommen.
 
-`` Bild: BraggPeak ~S. 20``
+![BraggPeak](Images/BraggPeak.jpeg)
 
 #### 5.1 Das Phänomen
 
@@ -149,17 +145,16 @@ Die einzigartige Eigenschaft des Bragg-Peaks – nämlich die scharfe Abgrenzung
 
 *   Im Gegensatz zu energiereichen Photonenstrahlen, deren Dosis exponentiell oder asymptotisch abfällt, erlaubt die Bragg-Peak-Kurve eine **millimetergenaue Dosierung** des Tumors, während das davor liegende Gewebe nur eine geringere Eintrittsdosis erhält und das dahinterliegende Gewebe nahezu vollständig geschont wird.
 
-`` Bild: DSD_88 ``
+![DSD_88](Images/DSD_88.jpg)
 
 *   **Anpassung des Peaks (SOBP):** Der Bragg-Peak eines monoenergetischen Strahls ist sehr schmal. Um größere Tumoren klinisch behandeln zu können, muss dieser Peak verbreitert werden. Dies wird durch die Erzeugung eines **Spread-Out Bragg Peak (SOBP)** erreicht, indem man einen Strahl mit einer verteilten Energie (variable Dicke von Abschwächern, sog. *spinning wedges*) verwendet. Die Modifikation des monoenergetischen Strahls resultiert in einem Plateau, das der spezifischen 3D-Form des Tumors angepasst werden kann.
 
-`` Bild: SOBP ``
+![SOBP](Images/SOBP.png)
 
 ### 6. Zusammenfassung
 
 Zusammenfassend lässt sich festhalten:
 
-``klein neben Stichpunkten: Bild: 1920_hirntumorbestrahlung ``
 
 Die **Wechselwirkungen geladener Teilchen mit Materie** sind durch zwei Hauptmechanismen definiert: den Kollisionsverlust ($S_{col}$) mit Orbitalelektronen und den Strahlungsverlust ($S_{rad}$) mit Atomkernen.
 
@@ -171,6 +166,6 @@ Die präzise Kenntnis dieser theoretischen Grundlagen, insbesondere der Dynamik 
 
 Die Fähigkeit, den Bragg-Peak zu formen und präzise im Zielvolumen zu platzieren, ist die technologische und physikalische Errungenschaft, die die moderne **Hadronentherapie** definiert und die Grundlage für die Dosimetrie in der Medizinphysik bildet. Die Forschung in diesem Bereich ist weiterhin essenziell, um die klinische Präzision fortlaufend zu optimieren.
 
-``Bild: 1920_hirntumorbestrahlung `` ``Text: Abschlussfolie: Titel & Florian Adamczyk ``
+![1920_hirntumorbestrahlung](Images/1920_hirntumorbestrahlung.jpg)  Text: Abschlussfolie: Titel & Florian Adamczyk
 
 Ich danke Ihnen für Ihre Aufmerksamkeit und stehe nun für Fragen zur Verfügung.

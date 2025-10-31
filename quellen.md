@@ -16,7 +16,7 @@ AN UPDATE OF THE SCIENTIFIC EVIDENCE FOR 15 PAEDIATRIC CANCERS
 
 ### 1920\_hirntumorbestrahlung
 
-https://www.heidelberg-university-hospital.com/fileadmin/*processed*/4/4/csm_HIT_Strahlen_30a73943c5.jpg
+https://www.heidelberg-university-hospital.com/fileadmin/*processed*/4/4/csm\_HIT\_Strahlen\_30a73943c5.jpg
 Slide Show: Cutting-edge technology HIT
 Image Gallery | 01.12.2019
 
@@ -33,6 +33,23 @@ https://www.psi.ch/de/news/medienmitteilungen/erfolgsgeschichte-begann-vor-25-ja
 
 By User:MarkFilipak, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=27983203
 
-FRED: a fast Monte Carlo code on GPU for quality control in Particle Therapy - Scientific Figure on ResearchGate. Available from: https://www.researchgate.net/figure/Spread-Out-Bragg-Peak-using-a-combination-of-proton-beams-with-different-energies_fig2_341733468 \[accessed 31 Oct 2025]
+FRED: a fast Monte Carlo code on GPU for quality control in Particle Therapy - Scientific Figure on ResearchGate. Available from: https://www.researchgate.net/figure/Spread-Out-Bragg-Peak-using-a-combination-of-proton-beams-with-different-energies\_fig2\_341733468 \[accessed 31 Oct 2025]
 
 Figure 2. Spread Out Bragg Peak using a combination of proton beams with different energies.
+
+
+
+
+
+\\title{Wechselwirkungen geladener Teilchen mit Materie}
+
+\\subtitle{Kurzvortrag}
+
+\\author{Florian Adamczyk}
+
+\\institute{M.Sc.\\ Angewandte Physik}
+
+\\date{\\today}
+
+\\titlegraphic{\\includegraphics\[width=0.7\\textwidth]{Images/Titlepage.png}}
+
