@@ -29,9 +29,10 @@ https://www.psi.ch/de/news/medienmitteilungen/erfolgsgeschichte-begann-vor-25-ja
 
 
 
-\### SOBP
+### SOBP
 
-FRED: a fast Monte Carlo code on GPU for quality control in Particle Therapy - Scientific Figure on ResearchGate. Available from: https://www.researchgate.net/figure/Spread-Out-Bragg-Peak-using-a-combination-of-proton-beams-with-different-energies\_fig2\_341733468 \[accessed 31 Oct 2025]
+By User:MarkFilipak, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=27983203
+
+FRED: a fast Monte Carlo code on GPU for quality control in Particle Therapy - Scientific Figure on ResearchGate. Available from: https://www.researchgate.net/figure/Spread-Out-Bragg-Peak-using-a-combination-of-proton-beams-with-different-energies_fig2_341733468 \[accessed 31 Oct 2025]
 
 Figure 2. Spread Out Bragg Peak using a combination of proton beams with different energies.
-

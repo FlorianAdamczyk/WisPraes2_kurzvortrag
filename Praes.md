@@ -17,9 +17,9 @@ als Masterstudent der Angewandten Physik freue ich mich, Ihnen heute in den näc
 
 ### 1. Einleitung: Aktuelle Relevanz
 
-Die präzise Steuerung und Dosierung geladener Teilchen ist ein Eckpfeiler der modernen Medizinphysik. Im Kontext der **Hadronentherapie**—insbesondere der Protonen- oder Schwerionentherapie—entscheidet die genaue Vorhersage des Energieverlusts darüber, ob der Bragg-Peak millimetergenau im Tumorgewebe platziert wird, während umliegendes gesundes Gewebe geschont bleibt.
+Die präzise Steuerung und Dosierung geladener Teilchen ist ein Eckpfeiler der modernen Medizinphysik. Im Kontext der **Hadronentherapie**—insbesondere der Protonen- oder Schwerionentherapie—entscheidet die genaue Vorhersage des Energieverlusts darüber, ob der Bragg-Peak millimetergenau im Tumorgewebe platziert wird, während umliegendes gesundes Gewebe geschont bleibt. ~S. 236 Kapitel 6.4
 
-Dieser kritische Bereich der Dosimetrie baut direkt auf den theoretischen Modellen auf, die erklären, wie geladene Teilchen ihre kinetische Energie schrittweise in einem absorbierenden Medium abgeben. Das Verständnis des **Bremsvermögens** ist daher nicht nur ein historisches Thema, das mit Bohr (1913) begann und mit Bethe und Fano (1930er/1960er) kulminierte, sondern es ist eine aktive Notwendigkeit für die klinische Präzision.
+Dieser kritische Bereich der Dosimetrie baut direkt auf den theoretischen Modellen auf, die erklären, wie geladene Teilchen ihre kinetische Energie schrittweise in einem absorbierenden Medium abgeben. ~S.232 6.2 Das Verständnis des **Bremsvermögens** ist daher nicht nur ein historisches Thema, das mit Bohr (1913) begann und mit Bethe und Fano (1930er/1960er) kulminierte, sondern es ist eine aktive Notwendigkeit für die klinische Präzision. ~S. 230 6.1
 
 ``Bild: Titlepage ``
 
@@ -27,20 +27,22 @@ Dieser kritische Bereich der Dosimetrie baut direkt auf den theoretischen Modell
 
 ### 2. Das Bremsvermögen (Stopping Power)
 
-Ein geladenes Teilchen, das in Materie eindringt, ist von seinem Coulomb-Feld umgeben, welches sowohl mit den Orbitalelektronen als auch mit den Atomkernen des Absorbers wechselwirkt. Die resultierenden Energieüberträge bestimmen, wie schnell das Teilchen seine kinetische Energie verliert – genau diese Verlustleistung fasst das Bremsvermögen.
+Ein geladenes Teilchen, das in Materie eindringt, ist von seinem Coulomb-Feld umgeben, welches sowohl mit den Orbitalelektronen als auch mit den Atomkernen des Absorbers wechselwirkt. Die resultierenden Energieüberträge bestimmen, wie schnell das Teilchen seine kinetische Energie verliert – genau diese Verlustleistung fasst das Bremsvermögen. 
+~S.229
 
 #### Definitionen und Zusammensetzung
 
 Das **lineare Bremsvermögen** beschreibt den Energieverlust pro Einheitsweg $(−dE/dx)$ in MeV/cm. Teilt man diesen Ausdruck durch die Dichte $\rho$ des Absorbers, erhält man das **Massenbremsvermögen**
 $$ S = -\frac{1}{\rho} \frac{dE}{dx} $$
 mit der Einheit $\text{MeV} \cdot \text{cm}^2 \cdot \text{g}^{-1}$.
-
+~S. 232 ff
 Das **Gesamt-Massenbremsvermögen** setzt sich additiv aus Kollisions- und Strahlungsanteil zusammen:
 $$ S_{tot} = S_{col} + S_{rad} \; . $$
+~S. 233
 
 #### Strahlungsverlust (S_rad, Bremsstrahlung)
 
-Der Strahlungsverlust beschreibt die Energieabgabe durch Bremsstrahlung infolge der Wechselwirkung mit den Atomkernen des Absorbers.
+Der Strahlungsverlust beschreibt die Energieabgabe durch Bremsstrahlung infolge der Wechselwirkung mit den Atomkernen des Absorbers. ~S. 233
 
 `` Bild: CollisionTypes ``
 
@@ -57,11 +59,11 @@ $$ S_{col} = S_{soft}^{col} + S_{hard}^{col} \; . $$
 
 Die mikroskopischen Wechselwirkungen werden klassisch über den Stoßparameter $b$ relativ zum Atomradius $a$ charakterisiert:
 
-`` nochmal: Bild: CollisionTypes ``
+`` nochmal: Bild: CollisionTypes ~S.231``
 
 1. **Weiche (distant) Kollisionen ($b \gg a$):** Das Teilchen spürt das gesamte Atom, der Energieübertrag pro Ereignis ist klein, die Häufigkeit jedoch groß. Diese Prozesse führen zu Polarisation, Anregung und Ionisation und tragen rund die Hälfte zu $S_{col}$ bei.
 2. **Harte (close) Kollisionen ($b \approx a$):** Direktes Coulomb-Wechselwirkung an einzelnen Elektronen verursacht große Energieüberträge. Die ausgelösten $\delta$-Elektronen sind selbst ionisierend und liefern den restlichen Beitrag zu $S_{col}$.
-
+~S.230
 ---
 
 ### 3. Die Bethe-Formel und die Dynamik des Kollisionsverlusts
@@ -72,7 +74,7 @@ Für schwere geladene Teilchen ist die **Kollisionsbremskraft** ($S_{col}$) der 
  
 Bethe unterteilte $S_{col}$ in $S_{soft}$ und $S_{hard}$. Bei der Zusammenfassung der Terme (Gleichung 6.40 und 6.41) fällt die willkürlich gewählte Energieabgrenzung $\eta$ zwischen weichen und harten Kollisionen heraus.
 
-Das Ergebnis für schwere geladene Teilchen (Bethe Mass Collision Stopping Power Equation) lautet (ohne Korrekturen):
+Das Ergebnis für schwere geladene Teilchen (Bethe Mass Collision Stopping Power Equation) lautet (ohne Korrekturen): ~S. 246
 
 $$ S_{col} = C_0 \frac{z^2}{A\beta^2} Z \left\{ \ln \frac{2m_e c^2}{I} + \ln \frac{\beta^2}{1-\beta^2} - \beta^2 \right\} $$
 
@@ -89,7 +91,7 @@ $$ S_{col} = C_0 \frac{z^2}{A\beta^2} Z \left\{ \ln \frac{2m_e c^2}{I} + \ln \fr
 3. **Relativistische Terme $\left( \ln \frac{\beta^2}{1-\beta^2} - \beta^2 \right)$:**
     * Diese Terme werden wichtig, wenn $\beta$ gegen 1 geht und führen zum langsamen Wiederanstieg der Bremskraft bei sehr hohen Energien.
 
-`` Bild: BetheKorr ``
+`` Bild: BetheKorr ~S.248``
 
 *Hinweis zu Korrekturen:* Um die Übereinstimmung mit Messdaten zu verbessern, insbesondere bei niedrigen Energien und in kondensierten Medien, werden der Bethe-Formel Korrekturen hinzugefügt: die **Shell Correction** $(C/Z)$ bei niedriger Energie (wenn Teilchengeschwindigkeit vergleichbar mit Elektronengeschwindigkeit ist) und die **Density Effect Correction** $(\delta)$ bei hohen Energien (aufgrund der Polarisierung des Mediums).
 
@@ -98,9 +100,9 @@ $$ S_{col} = C_0 \frac{z^2}{A\beta^2} Z \left\{ \ln \frac{2m_e c^2}{I} + \ln \fr
 
 ### 4. Die Form der Bethe Mass Collision Stopping Power Curve
 
-Die Auftragung des Kollisionsbremsvermögens $S_{col}$ als Funktion der kinetischen Energie $E_K$ (für schwere geladene Teilchen) zeigt drei charakteristische Regionen [60, 61, Fig. 6.7]:
+Die Auftragung des Kollisionsbremsvermögens $S_{col}$ als Funktion der kinetischen Energie $E_K$ (für schwere geladene Teilchen) zeigt drei charakteristische Regionen [60, 61, Fig. 6.7]: ~S.249
 
-`` Bild: BetheCurve ``
+`` Bild: BetheCurve ~S. 249``
 
 #### Region 1: Niedrige Energie
 
@@ -130,7 +132,7 @@ Nachdem wir die mikroskopische und relativistische Theorie des Energieverlusts i
 
 Der Energieverlust schwerer geladener Teilchen erfolgt nahezu ausschließlich durch Kollisionen ($S_{col}$). Da der Strahlungsverlust vernachlässigbar ist, bleiben diese Teilchen auf einem im Wesentlichen geradlinigen Pfad, bis sie zur Ruhe kommen.
 
-`` Bild: BraggPeak ``
+`` Bild: BraggPeak ~S. 20``
 
 #### 5.1 Das Phänomen
 
@@ -139,7 +141,7 @@ Der **Bragg-Peak**, benannt nach William Henry Bragg, der ihn 1903 entdeckte, be
 Dieser Peak ist die direkte Folge der Proportionalität der Kollisionsbremskraft zur reziproken Teilchengeschwindigkeit im intermediären Geschwindigkeitsbereich: $S_{col} \propto 1/\beta^2$.
 
 *   **Mechanismus:** Während das Teilchen Materie durchquert und Energie verliert, verlangsamt es sich. Gemäß der Bethe-Formel führt diese Reduktion der Geschwindigkeit zu einem dramatischen Anstieg des Bremsvermögens $S_{col}$.
-*   **Dosisabgabe:** Kurz bevor das schwere geladene Teilchen seine gesamte kinetische Energie $E_K$ verloren hat und zur Ruhe kommt, erreicht der Energieverlust pro Weglänge ($dE/dx$) ein Maximum, was zu einer hohen Dosisabgabe in dieser eng begrenzten Tiefe führt.
+*   **Dosisabgabe:** Kurz bevor das schwere geladene Teilchen seine gesamte kinetische Energie $E_K$ verloren hat und zur Ruhe kommt, erreicht der Energieverlust pro Weglänge ($dE/dx$) ein Maximum, was zu einer hohen Dosisabgabe in dieser eng begrenzten Tiefe führt. ~S. 24
 
 #### 5.2 Klinische Relevanz: Hadronentherapie
 
